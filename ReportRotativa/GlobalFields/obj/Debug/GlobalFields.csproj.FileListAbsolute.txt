@@ -1,0 +1,5 @@
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\GlobalFields\bin\Debug\GlobalFields.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\GlobalFields\bin\Debug\GlobalFields.pdb
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\GlobalFields\obj\Debug\GlobalFields.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\GlobalFields\obj\Debug\GlobalFields.pdb
+C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\GlobalFields\obj\Debug\GlobalFields.csprojResolveAssemblyReference.cache
