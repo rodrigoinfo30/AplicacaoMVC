@@ -1,7 +1,0 @@
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\bin\Release\Database.dll
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\bin\Release\Database.pdb
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\bin\Release\GlobalFields.dll
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\bin\Release\GlobalFields.pdb
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\obj\Release\Database.csprojResolveAssemblyReference.cache
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\obj\Release\Database.dll
-C:\Users\ROD\Documents\Visual Studio 2015\Projects\MoneyReport\Database\obj\Release\Database.pdb
