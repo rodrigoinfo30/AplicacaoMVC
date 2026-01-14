@@ -1,0 +1,9 @@
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\Business.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\Business.pdb
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\obj\Debug\Business.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\obj\Debug\Business.pdb
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\Database.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\GlobalFields.dll
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\Database.pdb
+c:\users\rod\documents\visual studio 2015\Projects\MoneyReport\Business\bin\Debug\GlobalFields.pdb
