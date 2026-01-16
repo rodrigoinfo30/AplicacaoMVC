@@ -1,0 +1,226 @@
+﻿@model PagedList.IPagedList<MoneyReport.Models.CamposRelModels>
+
+@{
+    var dt1 = ViewBag.Datini;
+    var dt2 = ViewBag.Datfim;
+    var totalCobSimples = ViewBag.totalCobSimples;
+    var totalFactoring = ViewBag.totalFactoring;
+    var totalFidc = ViewBag.totalFidc;
+    var totalCodSimplesSec = ViewBag.totalCodSimplesSec;
+    var totalSec = ViewBag.totalSec;
+    var totalSecRec = ViewBag.totalSecRec;
+    var totalAquisicao = ViewBag.totalAquisicao;
+    var totalConfissao = ViewBag.totalConfissao;
+    var totalRecompra = ViewBag.totalRecompra;
+    var totalFidcRec = ViewBag.totalFidcRec;
+    var totalFidcCobSim = ViewBag.totalFidcCobSim;
+    var totalConfSec = ViewBag.totalConfSec;
+    var totalAquiSec = ViewBag.totalAquiSec;
+
+    var qtdCodSimples = ViewBag.qtdCodSimples;
+    var qtdFactoring = ViewBag.qtdFactoring;
+    var qtdFidc = ViewBag.qtdFidc;
+    var qtdCobSimplesSec = ViewBag.qtdCobSimplesSec;
+    var qtdSec = ViewBag.qtdSec;
+    var qtdSecRec = ViewBag.qtdSecRec;
+    var qtdAquisicao = ViewBag.qtdAquisicao;
+    var qtdConfissao = ViewBag.qtdConfissao;
+    var qtdRecompra = ViewBag.qtdRecompra;
+    var qtdFidcRec = ViewBag.qtdFidcRec;
+    var qtdFidcCobSim = ViewBag.qtdFidcCobSim;
+    var qtdConfSec = ViewBag.qtdConfSec;
+    var qtdAquiSec = ViewBag.qtdAquiSec;
+    var CaminhoPDF = ViewBag.CaminhoPDF;
+}
+@{
+    Layout = null;
+    ViewBag.Title = "VentureNegócios";
+}
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    @*<link rel="icon" type="image/png" href="~/Layouts/Menu/images/favicon.ico" />*@
+    <link rel="icon" type="image/png" href="~/Content/Menu/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VentureNegócios</title>
+    <meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
+    <meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="~/Layouts/Menu/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Layouts/Menu/css/demorel.css" />
+    <link rel="stylesheet" type="text/css" href="~/Layouts/Menu/css/componentrel.css" />
+    <script src="~/Layouts/Menu/js/modernizr.custom.js"></script>
+    @Styles.Render("~/Layouts/Menu/css")
+    
+</head>
+<body>
+    @if (ViewBag.HideTextBox == true)
+    {
+        <div class="destaque1">
+            <br />
+            <span class="login100-form-logo-p-body">
+                <i class="zmdi zmdi-landscape"></i>
+            </span>
+            <h1>Relação de títulos em aberto</h1>
+            <h2>Período </h2>
+            <h3>Data inicial: @Html.DisplayFor(modelItem => dt1)</h3>
+            <h3>Data Final: @Html.DisplayFor(modelItem => dt2)</h3>
+            <h4 style="text-align:left">@Html.Raw(ViewBag.DatNow)</h4>
+            @*<div style="text-align:left">@Html.ActionLink("Exportar para PDF", "PrintExecutaRels")</div>*@
+            @*<h4><a href="/MVCVMONEYWEB/ExecutaRel/ExecAberto?pdf=true"><b>Gerar Relatório em PDF</b></a></h4>*@
+            <h4><a href="@Html.DisplayFor(modelItem => CaminhoPDF)"><b>Gerar Relatório em PDF</b></a></h4>
+        </div>
+        <table class="customers-table">
+            <tr>
+                <th>Sacado</th>
+                <th>Documento</th>
+                <th>Vencto</th>
+                <th>DA</th>
+                <th>Banco</th>
+                <th>Cobrança</th>
+                <th>T.Doc</th>
+                <th>Valor</th>
+                <th>Operação</th>
+                <th>Dt.Operação</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.Nom_sacado) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Documento) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Vencto) </td>
+                    <td> @Html.DisplayFor(modelItem => item.DA) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Cod_banco) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Sts_cob) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Sts_doc) </td>
+                    <td align="right"> @Html.DisplayFor(modelItem => item.Vlr_tit) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Operacao) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Dt_oper) </td>
+                </tr>
+            }
+        </table>
+        <br />
+        <div class="div-rodape">
+            <h3>@Html.DisplayFor(modelItem => totalCobSimples)</h3>
+            <h3>@Html.Raw(ViewBag.qtdCodSimples)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalFidc)</h3>
+            <h3>@Html.Raw(ViewBag.qtdFidc)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalFactoring)</h3>
+            <h3>@Html.Raw(ViewBag.qtdFactoring)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalCodSimplesSec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdCobSimplesSec)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalSec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdSec)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalSecRec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdSecRec)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalAquisicao)</h3>
+            <h3>@Html.Raw(ViewBag.qtdAquisicao)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalConfissao)</h3>
+            <h3>@Html.Raw(ViewBag.qtdConfissao)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalRecompra)</h3>
+            <h3>@Html.Raw(ViewBag.qtdRecompra)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalFidcRec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdFidcRec)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalFidcCobSim)</h3>
+            <h3>@Html.Raw(ViewBag.qtdFidcCobSim)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalConfSec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdConfSec)</h3>
+            <h3>@Html.DisplayFor(modelItem => totalAquiSec)</h3>
+            <h3>@Html.Raw(ViewBag.qtdAquiSec)</h3>
+        </div>
+
+    <!-- -->
+        <div class="div-rodape">
+            <div>
+                <h4><b>@Model.Count registros de @Model.TotalItemCount</b></h4>
+            </div>
+            @{
+                if (Model.TotalItemCount != Model.Count)
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+                            Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+                            @if (Model.HasPreviousPage)
+                            {
+                                @Html.ActionLink("<<", "ExecAberto", new { pagina = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                                @Html.Raw(" ");
+                                @Html.ActionLink("< Anterior", "ExecAberto", new { pagina = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                            }
+                            else
+                            {
+                                @:<<
+                                @Html.Raw(" ");
+                                @:< Anterior
+                        }
+
+                            @if (Model.HasNextPage)
+                            {
+                                @Html.ActionLink("Próxima >", "ExecAberto", new { pagina = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                                @Html.Raw(" ");
+                                @Html.ActionLink(">>", "ExecAberto", new { pagina = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                            }
+                            else
+                            {
+                                @:Próxima >
+                                @Html.Raw(" ")
+                                @:>>
+                        }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+                }
+    @if (TempData["AlertaSelecao"] != null)
+    {
+        <h3 class="alert alert-danger" >@TempData["AlertaSelecao"]</h3>        
+    }
+
+    @*<div class="container">
+        <ul id="gn-menu" class="gn-menu-main">
+            <li class="gn-trigger">
+                <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <span class="login100-form-logo-p">
+                            <i class="zmdi zmdi-landscape"></i>
+                        </span>
+                        <div class="form-dados-cli">
+                            <div>@Html.Raw(ViewBag.Message_Emp)</div>
+                        </div>
+                        <div class="form-dados-cli">
+                            <div>@Html.Raw(ViewBag.Message_User)</div>
+                        </div>
+                        <div class="form-dados-cli">
+                            <div>@Html.Raw(ViewBag.Message_Cod)</div>
+                        </div>
+                        <ul class="gn-menu" style="margin-top: 50px;">
+                            <li>
+                                <a class="gn-icon gn-icon-download">Rel. Aberto</a>
+                                <ul class="gn-submenu">
+                                    <li>
+                                        <a class="gn-icon gn-icon-voltar" @Html.ActionLink("Voltar", "RelAberto", "Relatorios", null, new { @class = "btn btn-success" })></a>
+                                    </li>
+                                    <li>
+                                        <a class="gn-icon gn-icon-sair" @Html.ActionLink("Sair", "sair")></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </li>
+            <li><a></a></li>
+        </ul>
+    </div>*@
+    @*<script src="~/Layouts/Menu/js/classie.js"></script>
+    <script src="~/Layouts/Menu/js/gnmenu.js"></script>
+    <script>
+        new gnMenu(document.getElementById('gn-menu'));
+    </script>*@
+</body>
+</html>
